@@ -1,18 +1,19 @@
 import { View, Image, StyleSheet } from 'react-native';
 
 import Texto from '../../../componentes/Texto'
+import Botao from '../../../componentes/Botao';
 
-import logo from '../../../../assets/logo.png'
-
-export default function Detalhes() {
+export default function Detalhes({ nome, logoFazenda, nomeFazenda, descricao, preco, botao }) {
     return <>
-        <Texto style={estilos.nome}>Cesta de Verduras</Texto>
+        <Texto style={estilos.nome}>{ nome }</Texto>
         <View style={estilos.fazenda}>
-            <Image style={estilos.imagemFazenda} source={logo} />
-            <Texto style={estilos.nomeFazenda}>Jenny Jack Farm</Texto>
+            <Image style={estilos.imagemFazenda} source={ logoFazenda } />
+            <Texto style={estilos.nomeFazenda}>{ nomeFazenda }</Texto>
         </View>
-        <Texto style={estilos.descricao}>Uma cesta com produtos selecionados cuidadosamente da fazenda direto para sua cozinha</Texto>
-        <Texto style={estilos.preco}>R$ 40,00</Texto>    
+        <Texto style={estilos.descricao}>{ descricao }</Texto>
+        <Texto style={estilos.preco}>{ preco }</Texto>
+
+        <Botao texto={ botao } style={estilos.botao} onPress={() => {}} />
     </>
 }
 
@@ -47,5 +48,8 @@ const estilos = StyleSheet.create({
         lineHeight: 42,
         fontWeight: "bold",
         marginTop: 8
+    },
+    botao: {
+        marginTop: 16,
     }
 });

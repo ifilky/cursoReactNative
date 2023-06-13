@@ -1,5 +1,7 @@
 import { SafeAreaView, View } from 'react-native';
 import Cesta from './src/telas/Cesta';
+import mock from './src/mocks/cesta';
+
 import { 
   useFonts,
   Montserrat_400Regular,
@@ -18,7 +20,7 @@ export default function App() {
 
   return (
     <SafeAreaView>
-      <Cesta />
+      <Cesta {...mock} /* topo={mocks.topo} detalhes={mocks.detalhes}... */ />
     </SafeAreaView>
   );
 }

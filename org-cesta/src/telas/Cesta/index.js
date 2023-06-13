@@ -1,18 +1,19 @@
-import { StyleSheet, SafeAreaView, View } from 'react-native';
+import { ScrollView, StyleSheet, SafeAreaView, View } from 'react-native';
 
 import Topo from './componentes/Topo';
 import Detalhes from './componentes/Detalhes';
+import Itens from './componentes/Itens';
 
-export default function Cesta() {
-    return <>
+export default function Cesta({ topo, detalhes, itens }) {
+    return <ScrollView>
         <SafeAreaView>
-            <Topo />
-            
+            <Topo {...topo} />
             <View style={estilos.cesta}>
-                <Detalhes />
+                <Detalhes {...detalhes} />
+                <Itens {...itens} />
             </View>
         </SafeAreaView>    
-    </>
+    </ScrollView>
 }
 
 const estilos = StyleSheet.create({
