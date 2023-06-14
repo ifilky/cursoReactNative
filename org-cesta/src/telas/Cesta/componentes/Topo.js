@@ -26,6 +26,5 @@ const estilos = StyleSheet.create ({
         color: "white",
         fontWeight: "bold",
         padding: 16,
-        marginTop: 16,
     },
 })

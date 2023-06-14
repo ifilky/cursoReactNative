@@ -1,4 +1,4 @@
-import { SafeAreaView, View } from 'react-native';
+import { StatusBar, SafeAreaView, View } from 'react-native';
 import Cesta from './src/telas/Cesta';
 import mock from './src/mocks/cesta';
 
@@ -19,7 +19,8 @@ export default function App() {
   }
 
   return (
-    <SafeAreaView>
+    <SafeAreaView style={{ flex: 1 }}>
+      <StatusBar />
       <Cesta {...mock} /* topo={mocks.topo} detalhes={mocks.detalhes}... */ />
     </SafeAreaView>
   );
