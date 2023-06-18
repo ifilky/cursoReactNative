@@ -21,8 +21,6 @@ export default function Cesta({ topo, detalhes, itens }) {
                 </>
             }}
         />
-
-
     </>
 }
 
