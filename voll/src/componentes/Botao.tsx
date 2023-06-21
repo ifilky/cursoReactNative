@@ -5,7 +5,7 @@ interface ButtonProps extends ITextProps {
     children: ReactNode;
 }
 
-export function Botao({ children, ...rest}){
+export function Botao({ children, ...rest}: ButtonProps){
     return (
         <Button
         w="100%"

@@ -1,5 +1,4 @@
 import { VStack, Image, Text, Box, FormControl, Input, Button, Link } from 'native-base';
-import { TouchableOpacity } from 'react-native';
 import Logo from './assets/Logo.png'
 import { Titulo } from './componentes/Titulo';
 import { EntradaTexto } from './componentes/EntradaTexto';
@@ -40,7 +39,12 @@ export default function Login() {
   ]
 
   function avancarSecao(){
-    setNumSecao(numSecao+1)
+    if(numSecao < secoes.length - 1)
+      setNumSecao(numSecao+1)
+  }
+  function voltarSecao(){
+    if(numSecao > 0)
+      setNumSecao(numSecao-1)
   }
 
   return ( 
@@ -61,6 +65,7 @@ export default function Login() {
         }
       </Box>
       
+      {numSecao > 0 && <Botao bgColor='gray.400' onPress={() => voltarSecao()}>Voltar</Botao>}
       <Botao onPress={() => avancarSecao()}>Avançar</Botao>
     </VStack>
   );
